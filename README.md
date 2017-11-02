@@ -34,16 +34,12 @@ $(function(){
 |key|description|default|options|
 |:---|---|---|---|
 | `container`|Container for carrying components.|`$("body")`|`String`|
-| `curPage`|What page is it now.|`"1"`|`Number`|
+| `curPage`|What page is it now.|`1`|`Number`|
 | `totalPage`|Page count.|``|`Number`|
 | `range`|Range of motion.|`4`|`Number`|
 | `showBox`| Do you want to show other information.|`false`|`Boolean`|
-| `lang`|Text information.|`first: "首页",
-				prev: "上一页",
-				next: "下一页",
-				last: "尾页"`|`String`|
+| `lang`|Text information.|`first: "首页",prev: "上一页",next: "下一页",last: "尾页"`|`String`|
 | `handler`|Callback processing.|`null`|`Function`|
-
 ## methods
 #### reset(totalPage)
 reset the pagination component
