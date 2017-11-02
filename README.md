@@ -3,11 +3,6 @@ This is a loading component that focuses on the PC side of web applications. It'
 # Dependence 
 - jquery.1.11.x
 # Installation
-
-## npm
-```html
-$ npm install
-```
 ## script
 ```html
 // import jquery.js
