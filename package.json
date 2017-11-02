@@ -1,0 +1,37 @@
+{
+  "name": "best-loading",
+  "version": "0.0.1",
+  "description": "This is a loading component that is primarily oriented to the PC side web development.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/chenyangdamon/best-loading.git"
+  },
+  "keywords": [
+    "loading"
+  ],
+  "author": "chenyangdamon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chenyangdamon/best-loading/issues"
+  },
+  "homepage": "https://github.com/chenyangdamon/best-loading#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-changed": "^3.1.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-eslint": "^4.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "run-sequence": "^2.2.0"
+  }
+}

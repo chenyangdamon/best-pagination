@@ -1,0 +1,32 @@
+/* example */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    font-style: normal;
+    text-decoration: none;
+}
+.example {
+    &-top {
+        padding: 0 50px;
+        height: 50px;
+        line-height: 50px;
+        background: #2E2E36;
+        color: #FFF;
+        h4 {
+            font-size: 16px;
+        }
+    }
+    &-container {
+        padding: 50px;
+        &-local{
+            height:300px;
+            border:1px solid #ddd;
+        }
+        &-row {
+            padding: 20px 0;
+            border-top: 1px solid #ededed; 
+        }
+    }
+}
