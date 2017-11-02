@@ -42,7 +42,7 @@
 				last: "尾页"
 			},
 			//点击页码后的回调
-			click: null
+			handler: function() {}
 		};
 		this.init.call(this, userOption);
 	};
@@ -88,8 +88,7 @@
 				// 重新生成数据
 				_this.makeData();
 				// 用户点击回调处理
-				typeof _this.option.click === "function" && _this.option.click.call(_this, curValue);
-
+				typeof _this.option.handler === "function" && _this.option.handler.call(_this, curValue);
 			});
 
 			//输入页码跳转
