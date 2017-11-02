@@ -42,7 +42,7 @@
 				last: "尾页"
 			},
 			//点击页码后的回调
-			click: null
+			click: function(){}
 		};
 		this.init.call(this, userOption);
 	};
