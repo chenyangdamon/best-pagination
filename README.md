@@ -33,7 +33,7 @@ $(function(){
 ## Options
 |key|description|default|options|
 |:---|---|---|---|
-| `selector`|Container for carrying components.|`""`|`String`|
+| `container`|Container for carrying components.|`$("body")`|`jQuery object`|
 | `curPage`|What page is it now.|`1`|`Number`|
 | `totalPage`|Page count.||`Number`|
 | `range`|Range of motion.|`4`|`Number`|
