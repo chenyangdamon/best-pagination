@@ -1,4 +1,4 @@
-# best-pagination
+# What is best-pagination ?
 This is a pagination component that focuses on the PC side of web applications. It's simple, compact, lightweight, efficient, and portable. Helps reduce the amount of development effort.
 # Dependence 
 - jquery.1.11.x
