@@ -1,5 +1,5 @@
-# What is best-loading ?
-This is a loading component that focuses on the PC side of web applications. It's simple, compact, lightweight, efficient, and portable. Helps reduce the amount of development effort.
+# What is best-pagination ?
+This is a pagination component that focuses on the PC side of web applications. It's simple, compact, lightweight, efficient, and portable. Helps reduce the amount of development effort.
 # Dependence 
 - jquery.1.11.x
 # Installation
@@ -7,8 +7,8 @@ This is a loading component that focuses on the PC side of web applications. It'
 ```html
 // import jquery.js
 <script type="text/javascript" src="js/jquery.js"></script>
-// import best-loading.js
-<script type="text/javascript" src="js/best-loading.js"></script>
+// import best-pagination.js
+<script type="text/javascript" src="js/best-pagination.js"></script>
 ```
 # Useage
 index.js
@@ -16,14 +16,15 @@ index.js
 <script type="text/javascript">
 $(function(){
   
-  // instantiation Loading
-  var loading=new Loading();
-  
-  // open
-  loading.open();
-  
-  // close
-  loading.close();
+  	// instantiation pagination
+	var pagination = new Pagination({
+		container: $("#J-pagination1"),
+		curPage: 21,
+		totalPage: 20,
+		handler: function(value) {
+			console.log(value);
+		}
+	});
   
 });
 </script>
@@ -33,22 +34,16 @@ $(function(){
 |key|description|default|options|
 |:---|---|---|---|
 | `container`|Container for carrying components.|`$("body")`|`String`|
-| `uclass`|Custom class.|`""`|`String`|
-| `effect`|Dynamic type, built-in three kinds of `micrsoft`、`recycle`、`flat`.|`micrsoft`|`String`|
-| `url`|Custom dynamic address.|`""`|`String`|
-| `show`|Whether to display text.|`true`|`Boolean`|
-| `text`|Text information.|`Being processed...`|`String`|
+| `curPage`|What page is it now.|`"1"`|`Number`|
+| `totalPage`|Page count.|``|`Number`|
+| `range`|Range of motion.|`4`|`Number`|
+| `showBox`| Do you want to show other information.|`false`|`Boolean`|
+| `lang`|Text information.|`first: "首页",
+				prev: "上一页",
+				next: "下一页",
+				last: "尾页"`|`String`|
+| `handler`|Callback processing.|`null`|`Function`|
 
 ## methods
-#### open(conf)
-open the loading component
-- conf.container
-- conf.uclass
-- conf.mode 
-- conf.effect
-- conf.url
-- conf.show
-- conf.text
-
-#### close()
-remove loading components
+#### reset(totalPage)
+reset the pagination component
