@@ -6,7 +6,7 @@
  * @Date   : 2017-02-28 22:08:02
  */
 
-$pagination-theme : #02A6A6;
+$pagination-theme : #ff6428;
 // $pagination-theme: $color-theme;
 //是否有圆角
 $pagination-is-radius: false;
@@ -34,8 +34,12 @@ $pagination-radius: 3px;
             border: 1px solid $pagination-theme;
             transition: background .2s;
 
-            &:hover {
+            &:active,&:visited {
                 background-color: $pagination-theme;
+                color: #FFF;
+            }
+            &:hover{
+                background-color: lighten($pagination-theme,13%);
                 color: #FFF;
             }
 

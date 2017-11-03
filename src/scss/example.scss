@@ -1,4 +1,7 @@
-/* example */
+/* 
+ Example 
+ */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,24 +10,55 @@
     font-style: normal;
     text-decoration: none;
 }
+$example-theme-color: #ff6428;
 .example {
     &-top {
-        padding: 0 50px;
-        height: 50px;
-        line-height: 50px;
-        background: #2E2E36;
+        padding: 0 60px;
+        height: 60px;
+        line-height: 60px;
+        background: $example-theme-color;
         color: #FFF;
-        h4 {
-            font-size: 16px;
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            strong {
+                margin-left: 10px;
+                font-size: 16px;
+                font-weight: normal;
+            }
         }
     }
     &-container {
-        padding: 50px;
-        &-local{
-            height:300px;
-            border:1px solid #ddd;
+        padding: 30px 60px;
+        fieldset {
+            margin-bottom:50px;
+            border: none;
+            border-top: 1px solid #eee;
+            legend {
+                margin-left: 40px;
+                padding: 0 10px; // height:30px;
+                font-size: 16px;
+            }
+        }
+        &-local {
+            height: 300px;
+            border: 1px solid #ddd;
+        }
+        &-title {
+            height: 28px;
+            line-height: 28px;
+            border-bottom: 1px solid $example-theme-color;
+            color: $example-theme-color;
+            font-size: 12px;
+            span {
+                float: left;
+                padding: 0 10px;
+                background: $example-theme-color;
+                color: #FFF;
+            }
         }
         &-row {
+            margin-bottom:30px;
             padding: 20px 0;
             border-top: 1px solid #ededed; 
         }

@@ -25,7 +25,7 @@
 		 */
 		this.defaultOption = {
 			//放置分页组件的容器
-			container: "",
+			container: $("body"),
 			// 当前页码
 			curPage: 1,
 			// 总页码
