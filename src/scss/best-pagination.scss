@@ -34,12 +34,12 @@ $pagination-radius: 3px;
             border: 1px solid $pagination-theme;
             transition: background .2s;
 
-            &:active,&:visited {
-                background-color: $pagination-theme;
-                color: #FFF;
-            }
             &:hover{
                 background-color: lighten($pagination-theme,13%);
+                color: #FFF;
+            }
+            &:active,&:visited {
+                background-color: $pagination-theme;
                 color: #FFF;
             }
 
@@ -47,9 +47,6 @@ $pagination-radius: 3px;
                 background-color: $pagination-theme;
                 color: #FFF;
                 cursor: text;
-                &:hover {
-
-                }
             }
 
             &.disabled {
