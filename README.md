@@ -23,8 +23,10 @@ $(function(){
 		container: $("#J-pagination1"),
 		curPage: 1,
 		totalPage: 1,
-		handler: function(value) {
-			console.log(value);
+		handler: function(curPage) {
+		 // curPage 当前页码,
+		 // $.ajax()
+		 // TODO...
 		}
 	});
   
