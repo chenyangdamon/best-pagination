@@ -2,11 +2,13 @@
  * @Author: chenyang_pc
  * @Date:   2017-10-28 22:08:02
  * @Last Modified by:   chenyang_pc
- * @Last Modified time: 2017-11-03 14:49:28
+ * @Last Modified time: 2018-02-28 11:28:38
  */
 
 $(function() {
-
+	
+	// best-pagination使用演示
+	
 	var pagination = new Pagination({
 		container: $("#J-pagination1"),
 		curPage: 1,

@@ -1,5 +1,5 @@
 /*!
- * JavaScript Components pc-better-pagination
+ * JavaScript Components best-pagination
  * @author : chenyangdamon
  * @email  : 645230634@qq.com
  * @github : https://github.com/chenyangdamon
