@@ -1,7 +1,7 @@
 # best-pagination 是什么?
 用于web开发中异步分页组件
 # 依赖 
-- jquery.1.11.x
+- jquery
 # 安装
 ## script
 ```html
@@ -35,14 +35,14 @@ $(function(){
 |:---|---|---|---|
 | `container`|组件根节点.|`$("body")`|`jQuery object`|
 | `curPage`|当前页码|`1`|`Number`|
-| `totalPage`|总页码.||`Number`|
-| `range`|页码区间范围.|`4`|`Number`|
-| `showBox`|分页信息框.|`false`|`Boolean`|
+| `totalPage`|总页码||`Number`|
+| `range`|页码区间范围|`4`|`Number`|
+| `showBox`|分页信息框|`false`|`Boolean`|
 | `lang`|按钮文本.|`first: "首页",prev: "上一页",next: "下一页",last: "尾页"`|`String`|
-| `handler`|切换页码后回调.|function(){}|`Function`|
+| `handler`|点击页码后的回调|function(){}|`Function`|
 ## 方法
 #### reset(totalPage)
-重置组件
+重置组件，常用于页面无刷新情况下，数据源变更，如更改了筛选条件。
 ```html
 pagination.reset(totalPage);
 ```
