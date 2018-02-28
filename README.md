@@ -46,7 +46,7 @@ $(function(){
 | `handler`|点击页码后的回调|function(){}|`Function`|
 ## 方法
 #### reset(totalPage)
-重置组件，常用于页面无刷新情况下，数据源变更，如更改了筛选条件。
+重置组件，常用于页面无刷新情况下，数据源变更，如业务中更改筛选条件时，对应的分页数据要变更。
 ```html
 // totalPage总页码
 pagination.reset(totalPage);
