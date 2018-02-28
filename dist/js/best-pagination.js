@@ -9,14 +9,12 @@
 (function(root, factory) {
 	if (typeof define === "function" && define.amd) {
 		// AMD模式
-		define(["jquery"], function() {
-			factory.apply(root, arguments)
-		});
+		define(["jquery"], factory);
 	} else {
 		// 全局模式
 		factory.call(root, root.$);
 	}
-})(window, function($) {
+}(typeof window !== "undefined" ? window : this, function($) {
 
 	var Pagination = function(userOption) {
 		/**
@@ -55,7 +53,7 @@
 		 * [constructor description]
 		 * @type {String}
 		 */
-		constructor: "Pagination",
+		constructor: Pagination,
 		/**
 		 * [init description]
 		 * @param  {[type]} userOption [description]
@@ -64,9 +62,11 @@
 		init: function(userOption) {
 			var _this = this;
 			_this.option = $.extend({}, _this.defaultOption, userOption);
+
 			if (_this.option.curPage <= 0) return;
 			if (_this.option.totalPage <= 0) return;
 			if (_this.option.curPage > _this.option.totalPage) _this.option.curPage = _this.option.totalPage;
+
 			_this.makeData();
 			_this.bindEvent();
 		},
@@ -116,7 +116,9 @@
 				minPage = 0,
 				maxPage = 0;
 
-			_this.option.range = _this.option.range > _this.option.totalPage ? _this.option.totalPage : _this.option.range;
+			if (_this.option.totalPage === 0) return;
+
+			_this._range = _this.option.range > _this.option.totalPage ? _this.option.totalPage : _this.option.range;
 
 			//文本信息
 			var sFirst = _this.option.lang.first,
@@ -179,21 +181,21 @@
 			}
 
 			//页码区间范围（ 核心重点 ）
-			var min = (_this.option.curPage - Math.floor(_this.option.range / 2));
+			var min = (_this.option.curPage - Math.floor(_this._range / 2));
 			minPage = min < 1 ? 1 : min;
 
 			// 如果max大于totalPage,则maxPage的值应为totalPage
-			var max = (minPage + _this.option.range - 1);
+			var max = (minPage + _this._range - 1);
 
 			maxPage = max > _this.option.totalPage ? _this.option.totalPage : max;
 
-			// if (this.option.curPage < this.option.range) {
+			// if (_this.option.curPage < _this.option.range) {
 			//     minPage = 1;
-			//     maxPage = this.option.range;
+			//     maxPage = _this.option.range;
 			// }
 
 			if (_this.option.curPage === _this.option.totalPage) {
-				minPage = _this.option.totalPage - _this.option.range + 1;
+				minPage = _this.option.totalPage - _this._range + 1;
 				maxPage = _this.option.totalPage;
 			}
 
@@ -321,7 +323,7 @@
 			}
 
 			// 分页外壳，可以实现居中对齐效果，如果不需要可以直接获取result值
-			var str = "<table width='100%'>\n" +
+			var str = "<table class='pagination-table' width='100%'>\n" +
 				"    <tr>\n" +
 				"        <td align='center'>\n" +
 				"            <table>\n" +
@@ -336,8 +338,8 @@
 			//渲染到指定容器中
 			if (_this.option.container instanceof jQuery) {
 				_this.option.container.html(str);
+				_this._paginationTable = _this.option.container.find(".pagination-table");
 			}
-
 		},
 
 		/**
@@ -357,9 +359,20 @@
 		 * @param totalPage
 		 */
 		reset: function(totalPage) {
-			var _this = this;
+			var _this = this,
+				_totalPage = parseInt(totalPage);
+
+			// 无数据时，隐藏分页组件
+			// if (_totalPage === 0) {
+			// 	_this._paginationTable.hide();
+			// } else {
+			// 	_this._paginationTable.show();
+			// }
+			_this._paginationTable && _this._paginationTable[_totalPage === 0 ? "hide" : "show"]();
+
 			_this.option.curPage = 1;
-			_this.option.totalPage = parseInt(totalPage) || _this.option.totalPage;
+			_this.option.totalPage = _totalPage;
+
 			_this.makeData();
 		}
 	};
@@ -367,6 +380,11 @@
 	 * [Pagination description]
 	 * @type {[type]}
 	 */
-	this.Pagination = Pagination;
-
-});
+	if (typeof define === "function" && define.amd) {
+		// AMD模式
+		return Pagination;
+	} else {
+		// 全局模式
+		this.Pagination = Pagination;
+	}
+}));
