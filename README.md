@@ -1,5 +1,5 @@
 # best-pagination 是什么?
-应用于web开发的异步分页组件
+应用于web开发(仅支持PC)的异步分页组件
 # 演示
 [demo](https://chenyangdamon.github.io/best-pagination/dist/)
 # 依赖 
