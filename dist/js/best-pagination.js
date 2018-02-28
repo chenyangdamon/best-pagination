@@ -30,7 +30,7 @@
 			totalPage: 1,
 			// 页码区间范围
 			range: 4,
-			// 是否显示其他
+			// 是否显示其他分页信息
 			showBox: false,
 			//文本信息
 			lang: {

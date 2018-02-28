@@ -1,5 +1,7 @@
 # best-pagination 是什么?
 用于web开发中异步分页组件
+# 演示
+[demo](https://chenyangdamon.github.io/best-pagination/dist/)
 # 依赖 
 - jquery
 # 安装
