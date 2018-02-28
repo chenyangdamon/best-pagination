@@ -33,16 +33,17 @@ $(function(){
 ## 配置
 |属性|说明|默认值|字段类型|
 |:---|---|---|---|
-| `container`|组件根节点.|`$("body")`|`jQuery object`|
+| `container`|放置分页组件的容器.|`$("body")`|`jQuery object`|
 | `curPage`|当前页码|`1`|`Number`|
-| `totalPage`|总页码||`Number`|
+| `totalPage`|总页码,当总页码为0时，组件不显示|`1`|`Number`|
 | `range`|页码区间范围|`4`|`Number`|
-| `showBox`|分页信息框|`false`|`Boolean`|
+| `showBox`|是否显示其他分页信息|`false`|`Boolean`|
 | `lang`|按钮文本.|`first: "首页",prev: "上一页",next: "下一页",last: "尾页"`|`String`|
 | `handler`|点击页码后的回调|function(){}|`Function`|
 ## 方法
 #### reset(totalPage)
 重置组件，常用于页面无刷新情况下，数据源变更，如更改了筛选条件。
 ```html
+// totalPage总页码
 pagination.reset(totalPage);
 ```
