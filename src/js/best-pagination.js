@@ -328,7 +328,7 @@
 				"        <td align='center'>\n" +
 				"            <table>\n" +
 				"                <tr>\n" +
-				"                    <td><div class='pb-pagination'>" + result.join("") + "" + (_this.option.showBox ? _this.createBox() : "") + "</div></td>\n" +
+				"                    <td><div class='best-pagination'>" + result.join("") + "" + (_this.option.showBox ? _this.createBox() : "") + "</div></td>\n" +
 				"                </tr>\n" +
 				"            </table>\n" +
 				"        </td>\n" +

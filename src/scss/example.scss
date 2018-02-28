@@ -13,11 +13,16 @@
 $example-theme-color: #F10215;
 .example {
     &-top {
+        position:fixed;
+        top:0;
+        left:0;
+        right:0;
         padding: 0 60px;
         height: 60px;
         line-height: 60px;
-        background: $example-theme-color;
+        background: linear-gradient(top, $example-theme-color, #F75656);
         color: #FFF;
+        box-shadow:0 1px 10px #F325254A;
         .title {
             font-size: 20px;
             font-weight: bold;
@@ -29,7 +34,8 @@ $example-theme-color: #F10215;
         }
     }
     &-container {
-        padding: 30px 60px;
+        margin-top:60px;
+        padding: 30px 60px 30px;
         fieldset {
             margin-bottom:50px;
             border: none;
